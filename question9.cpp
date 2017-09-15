@@ -1,16 +1,39 @@
+
 #include <iostream>
 using namespace std;
 
-int main() {
+void findPerfect(int numberOne, int numberTwo) {
+	int divisor, sum;
+	sum = 0;
+	
+	for (int j = numberOne; j <= numberTwo; j++) {
+		for (int i = 1; i <= j/2; i++) {
+			if (j % i == 0) {
+				divisor = i;
+				sum += divisor;
+			}
+		}
 		
-		char c;
-		cout<<"Enter a character:";
-		cin>>c;
-		if((c>64 && c<91) || (c>96 && c<123))
-			cout<<"Entered character is an alphabet";	
-		else if(c>47 && c<58) 
-			cout<<"Entered character is a digit";	
-		else 	
-			cout<<"Entered character is a special character";
-		return 0;
+		if (sum == j) {
+			cout << j << " ";
+		}
+		sum = 0;
+	}
 }
+
+int main() {
+	
+	int a, b;
+	
+	cout << "Enter the first number: ";
+	cin >> a;
+	
+	cout << "Enter the last number: ";
+	cin >> b;
+	
+	findPerfect(a, b);
+	cout << endl;
+	
+	return 0;
+}
+

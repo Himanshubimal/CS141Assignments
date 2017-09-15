@@ -1,16 +1,28 @@
+
 #include <iostream>
 using namespace std;
 
+float diameter(float radius) {
+	return radius*2;
+}
+
+float circumference(float radius) {
+	return 2*3.14*radius;
+}
+
+float area(float radius) {
+	return 3.14*radius*radius;
+}
+
 int main() {
-	int num1,num2,num3,max;
-	cout<<"Enter 3 numbers:";
-	cin>>num1>>num2>>num3;
-	if(num1>num2)
-		max=num1;	
-	else
-		max=num2;
-	if(num3>max)
-		max=num3;		
-	cout<<"Laregst of the 3 entered numbers:"<<max;
+	
+	float radius;
+	
+	cout << "Enter the radius of the circle: ";
+	cin >> radius;
+	
+	cout << "The diameter of the circle is " << diameter(radius) << ", its circumference is " << circumference(radius) << " and its area is " << area(radius) << ".\n";
+	
 	return 0;
 }
+

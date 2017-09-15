@@ -1,14 +1,36 @@
+
 #include <iostream>
 using namespace std;
 
-int main() {
-		
-		int num;
-		cout<<"Enter a year:";
-		cin>>num;
-		if(num%4==0)
-			cout<<"Entered year is a leap year";	
-		else 
-			cout<<"Entered year is not a leap year";	
-		return 0;
+void findPrimes(int numberOne, int numberTwo) {
+	int numOfDivisors = 0;
+
+	for (int i = numberOne; i <= numberTwo; i++) {
+		for (int j = 1; j <= i; j++) {
+			if (i % j == 0) {
+				numOfDivisors++;
+			}
+		}
+		if (numOfDivisors == 2) {
+			cout << i << " ";
+		}
+		numOfDivisors = 0;
+	}
 }
+
+int main() {
+	
+	int a, b;
+	
+	cout << "Enter the first number: ";
+	cin >> a;
+	
+	cout << "Enter the last number: ";
+	cin >> b;
+	
+	findPrimes(a,b);
+	cout << endl;
+	
+	return 0;
+}
+

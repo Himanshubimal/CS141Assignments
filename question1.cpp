@@ -1,13 +1,24 @@
+
 #include <iostream>
 using namespace std;
-int main(){
-	int num1,num2;
-	cout<<"Enter 2 Integers: ";
-	cin>>num1>>num2;
-	if(num1>num2)
-		cout<<num1<<" is greater than "<<num2;
-	else if(num2>num1)
-		cout<<num2<<" is greater than "<<num1; 
-	else
-		cout<<"The entered numbers are equal";
+
+int cube(int n) {
+	int product = 1;
+	for (int i = 1; i <= 3; i++) {
+		product = product * n;
+	}
+	return product;
 }
+
+int main() {
+	
+	int number;
+	
+	cout << "Enter a number: ";
+	cin >> number;
+	
+	cout << number << " cubed is equal to " << cube(number) << ".\n";
+	
+	return 0;
+}
+

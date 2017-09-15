@@ -1,14 +1,45 @@
+
 #include <iostream>
 using namespace std;
 
-int main() {
+void findStrong(int numberOne, int numberTwo) {
+	int i, digit, factorial, sumFactorials;
+	
+	for (int l = numberOne; l <= numberTwo; l++) {
+		sumFactorials = 0;
+		i = l;
+		while (i != 0) {
+			factorial = 1;
+			digit = i % 10;
+			i = i/10;
+			
+			for (int j = 1; j <= digit; j++) {
+				factorial = factorial*j;
+			}
+			
+			sumFactorials += factorial;
+			
+		}
 		
-		char c;
-		cout<<"Enter a character:";
-		cin>>c;
-		if((c>64 && c<91) || (c>96 && c<123))
-			cout<<"Entered character is an alphabet";	
-		else 
-			cout<<"Entered character is not an alphabet";	
-		return 0;
+		if (sumFactorials == l) {
+			cout << l << " ";
+		}
+	}
 }
+
+int main() {
+	
+	int a, b;
+	
+	cout << "Enter the first number: ";
+	cin >> a;
+	
+	cout << "Enter the last number: ";
+	cin >> b;
+	
+	findStrong(a, b);
+	cout << endl;
+	
+	return 0;
+}
+
